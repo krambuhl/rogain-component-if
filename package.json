@@ -1,0 +1,31 @@
+{
+  "name": "rogain-component-if",
+  "version": "1.0.0",
+  "description": "Rogain If helper component",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test/*.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krambuhl/rogain-component-if.git"
+  },
+  "keywords": [
+    "rogain",
+    "rogain-component",
+    "core"
+  ],
+  "author": "Evan Krambuhl <thekrambuhl@gmail.com> (http://stumptownbear.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/krambuhl/rogain-component-if/issues"
+  },
+  "homepage": "https://github.com/krambuhl/rogain-component-if",
+  "devDependencies": {
+    "tape": "^4.4.0"
+  },
+  "dependencies": {
+    "rogain-utils": "~0.2",
+    "rogain-component-defined": "~1.0"
+  }
+}
