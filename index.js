@@ -1,4 +1,4 @@
-const Defined = require('rogain-helper-defined');
+const Defined = require('rogain-component-defined');
 const splitTree = require('rogain-utils').splitTree;
 
 module.exports = function If(tree, props) {
