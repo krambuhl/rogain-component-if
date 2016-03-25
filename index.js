@@ -6,7 +6,7 @@ module.exports = function If(tree, props) {
     return Defined(tree, props);
   }
 
-  var split = splitTrees(tree, { type: 'component', name: 'Else' });
+  var split = splitTrees(tree.children, { type: 'component', name: 'Else' });
   var res = split[1];
   
   if (tree.data == tree.attrs.value) {
