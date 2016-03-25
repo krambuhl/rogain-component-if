@@ -1,5 +1,5 @@
 const Defined = require('rogain-component-defined');
-const splitTree = require('rogain-utils').splitTree;
+const splitTrees = require('rogain-utils').splitTrees;
 
 module.exports = function If(tree, props) {
   if (!tree.attrs.value) {
