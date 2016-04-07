@@ -1,25 +1,23 @@
 # rogain-component-if
 
 ```html
-<If data={variable} not|or|and equal defined empty gt gte !lt !lte>
+<If data={variable} or and not equal defined empty gt gte lt lte />
 ```
 
 Passes its children through if `data` passes defined attribute tests.  Any trees defined after the `<Else />` will be passed through if `data` doesn't pass attributes tests.
 
-The attributes `and`, `or`, and `not` can be used to define how all tests should logically be grouped, `!` can be prefixed to negate individual tests. 
-
-The tests `equal`, `defined`, `empty`, `gt`, `gte`, `lt`, `lte` can be used to test against the `data` attribute value.
+The attributes `and`, `or`, and `not` can be used to define how all tests should logically be grouped. The attribute predicates `equal`, `defined`, `empty`, `gt`, `gte`, `lt`, `lte` can be used to test against the `data` attribute value.
 
 __Attributes__
 
 Attribute | Description
 --- | ---
 data | Variable or Expression.
-and | Runs all tests with __AND__ logic, short circuits on any test failure. The default if `and` or `or` is not defined.
-or | Runs all tests with __OR__ logic, short cicuits when any test passes.
+and | Runs all tests with __AND__ logic, short circuits when any predicate fails. The default is `and` if `or` is not defined.
+or | Runs all predicates with __OR__ logic, short cicuits when any predicate passes.
 not | Negates the end result of all tests.
 
-__Tests__
+__Attribute Predicates__
 
 Attribute | Description
 --- | ---
@@ -33,9 +31,9 @@ lte | Variable or Expression. returns true if it's value is thess than or equal 
 
 ## Examples
 
-__Default Tests / Else__
+__Default Predicates / Else__
 
-If no tests are defined, the default tests are `<If data={var} or defined !empty equal="true"></If>`
+If no tests are defined, the default predicates are `<If data={var} or defined empty="false" equal="true"></If>`
 
 ```html
 <If data={loggedIn}>
@@ -45,18 +43,27 @@ If no tests are defined, the default tests are `<If data={var} or defined !empty
 </If>
 ```
 
-__Negated Tests__
+__Negated Predicates__
 
 ```html
-<If data={error} !defined>Way to go, no errors!</If>
+<If data={error} defined="false">Way to go, no errors!</If>
+<If data={error} not defined>Way to go, no errors!</If>
 ```
 
-__Complex Tests__
+__Complex Predicates__
+
+If `and` or `or` attributes aren't defined the predicates will be run using __AND__ logic by default.
 
 ```html
-<If data={@index} lt="100" gte="0">10 - 99</If>
-<If data={@index} lt="1000" gte="100">100 - 999</If>
-<If data={@index} gte="1000">1000+</If>
+<If data={index} lt="100" gte="0">10 - 99</If>
+<If data={index} lt="1000" gte="100">100 - 999</If>
+<If data={index} gte="1000">1000+</If>
+```
+
+__OR Logic__
+
+```html
+<If data={mythings} or empty defined="false">MY THINGS BE MISSING</If>
 ```
 
 ## Install 
