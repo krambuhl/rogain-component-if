@@ -25,8 +25,10 @@ test('<If data={defined}><div /></If> :: no value attr', function(t) {
 test('<If data={undefined}><div /></If> :: no value attr', function(t) {
   t.plan(1);
 
-  var tree = Object.assign({ }, defTree, { data: undefined });
+  var tree = Object.assign({ }, defTree, { attrs: { data: undefined } });
   var res = If(tree, { });
+
+  console.log(tree, res)
 
   t.equal(res === undefined, true);
 });
