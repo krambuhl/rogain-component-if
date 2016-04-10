@@ -36,7 +36,7 @@ __Default Predicates / Else__
 If no tests are defined, the default predicates are `<If data={var} and defined empty="false"></If>`
 
 ```html
-<If data={loggedIn}>
+<If data={loggedIn} equal="true">
     <Dashboard />
 <Else />
     <Login />
