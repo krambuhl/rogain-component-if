@@ -33,7 +33,7 @@ lte | Variable or Expression. returns true if it's value is thess than or equal 
 
 __Default Predicates / Else__
 
-If no tests are defined, the default predicates are `<If data={var} or defined empty="false" equal="true"></If>`
+If no tests are defined, the default predicates are `<If data={var} and defined empty="false"></If>`
 
 ```html
 <If data={loggedIn}>
