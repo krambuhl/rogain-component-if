@@ -2,7 +2,7 @@
   "name": "rogain-component-if",
   "version": "1.0.0",
   "description": "Rogain <If /> helper component",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "babel lib -d dist",
     "develop": "babel lib -w -d dist",
