@@ -1,6 +1,6 @@
 {
   "name": "rogain-component-if",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Rogain <If /> helper component",
   "main": "dist/index.js",
   "scripts": {
