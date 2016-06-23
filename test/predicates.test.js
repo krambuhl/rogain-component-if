@@ -9,7 +9,6 @@ var lte = require('../dist/predicates/lte');
 
 test('defined', function(t) {
   t.plan(6);
-
   t.equal(defined(undefined), false); // <If data={undefined} defined />
   t.equal(defined('boo'), true); // <If data="boo" defined />
   t.equal(defined('boo', 'false'), false); // <If data="boo" defined="false" />
@@ -20,15 +19,12 @@ test('defined', function(t) {
 
 test('empty', function(t) {
   t.plan(11);
-
   t.equal(empty(undefined), false); // <If data={undefined} empty />
-
   t.equal(empty([]), true); // <If data=[] empty />
   t.equal(empty([], 'false'), false); // <If data=[] empty="false" /> ([] is not empty === true)
   t.equal(empty([7], 'empty'), false); // <If data=[7] empty="empty" />
   t.equal(empty([7], 'true'), false); // <If data=[7] empty="true" />
   t.equal(empty([7], 'false'), true); // <If data=[7] empty="false" />
-
   t.equal(empty({ }), true); // <If data={ } empty />
   t.equal(empty({ }, 'false'), false); // <If data={ } empty="false" />
   t.equal(empty({ id: 0 }, 'empty'), false); // <If data={ id } empty="empty" />
@@ -38,7 +34,6 @@ test('empty', function(t) {
 
 test('equal', function(t) {
   t.plan(3);
-
   t.equal(equal(undefined, 'string'), false); // <If data={undefined} equal="string" />
   t.equal(equal('string', 'string'), true); // <If data="string" equal="string" />
   t.equal(equal('string', undefined), false); // <If data="string" equal={undefined} />
@@ -46,7 +41,6 @@ test('equal', function(t) {
 
 test('gt', function(t) {
   t.plan(4);
-
   t.equal(gt(undefined, 0), false); // <If data={undefined} gt="0" />
   t.equal(gt(0, 0), false); // <If data="0" gt="0" />
   t.equal(gt(10, 15), false); // <If data="10" gt="15" />
@@ -55,7 +49,6 @@ test('gt', function(t) {
 
 test('gte', function(t) {
   t.plan(4);
-
   t.equal(gte(undefined, 0), false); // <If data={undefined} gte="0" />
   t.equal(gte(0, 0), true); // <If data="0" gte="0" />
   t.equal(gte(10, 15), false); // <If data="10" gte="15" />
@@ -64,7 +57,6 @@ test('gte', function(t) {
 
 test('lt', function(t) {
   t.plan(4);
-
   t.equal(lt(undefined, 0), false); // <If data={undefined} lt="0" />
   t.equal(lt(0, 0), false); // <If data="0" lt="0" />
   t.equal(lt(10, 15), true); // <If data="10" lt="15" />
@@ -73,7 +65,6 @@ test('lt', function(t) {
 
 test('lte', function(t) {
   t.plan(4);
-
   t.equal(lte(undefined, 0), false); // <If data={undefined} lte="0" />
   t.equal(lte(0, 0), true); // <If data="0" lte="0" />
   t.equal(lte(10, 15), true); // <If data="10" lte="15" />

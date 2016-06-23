@@ -11,35 +11,32 @@ var defTree = {
 };
 
 test('<If data=123 equal=789><div /></If> :: unequal', function(t) {
-  t.plan(1);
-
-  var tree = Object.assign({ }, defTree, { attrs: { data: 123, equal: 789 } });
+  var tree = Object.assign({ }, defTree, { attribs: { data: 123, equal: 789 } });
   var res = If(tree, { });
 
+  t.plan(1);
   t.equal(res === undefined, true);
 });
 
 test('<If data=123 equal=123><div /><Else /><p /></If> :: equal', function(t) {
-  t.plan(3);
-
-  var tree = Object.assign({ }, defTree, { attrs: { data: 123, equal: 123 } });
+  var tree = Object.assign({ }, defTree, { attribs: { data: 123, equal: 123 } });
   tree.children.push({ type: 'component', name: 'Else' });
   tree.children.push({ type: 'tag', name: 'p' });
   var res = If(tree, { });
 
+  t.plan(3);
   t.equal(res.length, 1);
   t.equal(res[0].type, 'tag');
   t.equal(res[0].name, 'div');
 });
 
 test('<If data=123 equal=789><p /><Else /><div /></If> :: unequal else', function(t) {
-  t.plan(3);
-
-  var tree = Object.assign({ }, defTree, { attrs: { data: 123, equal: 789 } })
+  var tree = Object.assign({ }, defTree, { attribs: { data: 123, equal: 789 } })
   tree.children.unshift({ type: 'component', name: 'Else' });
   tree.children.unshift({ type: 'tag', name: 'p' });
   var res = If(tree, { });
 
+  t.plan(3);
   t.equal(res.length, 1);
   t.equal(res[0].type, 'tag');
   t.equal(res[0].name, 'div');
