@@ -66,7 +66,7 @@ __OR Logic__
 <If data={mythings} or empty defined="false">MY THINGS BE MISSING</If>
 ```
 
-## Install 
+## Install
 
 With [npm](https://www.npmjs.com) do:
 
