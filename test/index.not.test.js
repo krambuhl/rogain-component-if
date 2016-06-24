@@ -4,7 +4,7 @@ const If = require('../dist');
 const Tree = {
   type: 'component',
   name: 'If',
-  attrs: {
+  attribs: {
     not: 'not'
   },
   children: [{
@@ -23,8 +23,8 @@ test('<If data="thing" not equal="thing"><div /><Else /><p /></If>', function(t)
   t.plan(3);
 
   let tree = Object.assign({ }, Tree);
-  tree.attrs.data = 'thing';
-  tree.attrs.equal = 'thing';
+  tree.attribs.data = 'thing';
+  tree.attribs.equal = 'thing';
 
   let res = If(tree);
 
@@ -37,8 +37,8 @@ test('<If data="thing2" not equal="thing"><div /><Else /><p /></If>', function(t
   t.plan(3);
 
   let tree = Object.assign({ }, Tree);
-  tree.attrs.data = 'thing2';
-  tree.attrs.equal = 'thing';
+  tree.attribs.data = 'thing2';
+  tree.attribs.equal = 'thing';
 
   let res = If(tree);
 

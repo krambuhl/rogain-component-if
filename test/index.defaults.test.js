@@ -17,7 +17,7 @@ const DefTree = {
 };
 
 test('<If data={undefined}><div /><Else /><p /></If> :: default undefined', function(t) {
-  const tree = Object.assign({ }, DefTree, { data: undefined });
+  const tree = Object.assign({ }, DefTree, { attribs: { data: undefined } });
   const res = If(tree);
 
   t.plan(3);
@@ -27,7 +27,7 @@ test('<If data={undefined}><div /><Else /><p /></If> :: default undefined', func
 });
 
 test('<If data={1234}><div /><Else /><p /></If> :: default number', function(t) {
-  const tree = Object.assign({ }, DefTree, { data:  1234 });
+  const tree = Object.assign({ }, DefTree, { attribs: { data:  1234 } });
   const res = If(tree);
 
   t.plan(3);
@@ -37,7 +37,7 @@ test('<If data={1234}><div /><Else /><p /></If> :: default number', function(t) 
 });
 
 test('<If data="thing"><div /><Else /><p /></If> :: default string', function(t) {
-  const tree = Object.assign({ }, DefTree, { data: 'thing' };);
+  const tree = Object.assign({ }, DefTree, { attribs: { data: 'thing' } });
   const res = If(tree);
 
   t.plan(3);
@@ -47,7 +47,7 @@ test('<If data="thing"><div /><Else /><p /></If> :: default string', function(t)
 });
 
 test('<If data={ buddy: true }><div /><Else /><p /></If> :: default object', function(t) {
-  const tree = Object.assign({ }, DefTree, { data: { buddy: true } };);
+  const tree = Object.assign({ }, DefTree, { attribs: { data: { buddy: true } } });
   const res = If(tree);
 
   t.plan(3);
@@ -57,7 +57,7 @@ test('<If data={ buddy: true }><div /><Else /><p /></If> :: default object', fun
 });
 
 test('<If data={}><div /><Else /><p /></If> :: default empty object', function(t) {
-  const tree = Object.assign({ }, DefTree, { data: { } };);
+  const tree = Object.assign({ }, DefTree, { attribs: { data: { } } });
   const res = If(tree);
 
   t.plan(3);
@@ -67,7 +67,7 @@ test('<If data={}><div /><Else /><p /></If> :: default empty object', function(t
 });
 
 test('<If data=[1,2]><div /><Else /><p /></If> :: default array', function(t) {
-  const tree = Object.assign({ }, DefTree, { data: [1, 2] });
+  const tree = Object.assign({ }, DefTree, { attribs: { data: [1, 2] } });
   const res = If(tree);
 
   t.plan(3);
@@ -76,7 +76,7 @@ test('<If data=[1,2]><div /><Else /><p /></If> :: default array', function(t) {
   t.equal(res[0].name, 'div');
 });
 test('<If data=[]><div /><Else /><p /></If> :: default empty array', function(t) {
-  const tree = Object.assign({ }, DefTree, { data: [] });
+  const tree = Object.assign({ }, DefTree, { attribs: { data: [] } });
   const res = If(tree);
 
   t.plan(3);
